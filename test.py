@@ -5,10 +5,11 @@ user = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123",
 
 
 
+
 u_tab = input("user name:")
 if u_tab in name:
         tab = input("password: ")
-        if tab in user.get(u_tab):
+        if tab == user.get(u_tab):
             print("you are here")
         else:
             print("wrong password")
