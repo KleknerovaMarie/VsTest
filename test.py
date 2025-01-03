@@ -94,7 +94,7 @@ if names in name and passwords == user.get(names):               # pokud je jmé
             print("The sum of all the numbers", suma_list)
            
             
-            frequency = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0 }
+            frequency = {}
             graf = []                                                       #počítá četnost délky slov
             for words_frequency in number_one.replace(",", " ").replace(".", " ").split():     
                 if words_frequency.istitle() or words_frequency.isalpha() or words_frequency.isalnum():
@@ -105,9 +105,23 @@ if names in name and passwords == user.get(names):               # pokud je jmé
             for unit in all_range : 
                 provisional.append(len(graf[unit]))
                 unit +=1
-            #print(provisional)
-            for part_provisional in provisional:
-                frequency[int(part_provisional)] += 1
+            preparation = []
+            for sort_preparation in provisional:
+                if sort_preparation not in preparation:
+                    preparation.append(sort_preparation)
+                else:
+                    continue
+            preparation.sort()
+            i = 1
+            simple = []
+            for x in provisional:
+                if i in range(0,len(preparation)):
+                    x = int(x)
+                    c = simple.append(provisional.count(i))
+                    i += 1
+                else:
+                    break
+            frequency = dict(zip(preparation,simple))
             print(frequency)
                 
 
@@ -156,7 +170,6 @@ if names in name and passwords == user.get(names):               # pokud je jmé
             for numeric in every:
                 if numeric.isdigit():
                     every_numeric.append(numeric)
-                    #print(every_numeric)
                     all_numeric = len(every_numeric)
             print("The sum of all the numbers", all_numeric)
 
@@ -167,7 +180,7 @@ if names in name and passwords == user.get(names):               # pokud je jmé
                     suma_list += x
             print("The sum of all the numbers",suma_list)
 
-            frequency = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0 }
+            frequency = {}
             graf = []                                                       #počítá četnost délky slov
             for words_frequency in number_two.replace(",", " ").replace(".", " ").split():     
                 if words_frequency.istitle() or words_frequency.isalpha() or words_frequency.isalnum():
@@ -178,10 +191,30 @@ if names in name and passwords == user.get(names):               # pokud je jmé
             for unit in all_range : 
                 provisional.append(len(graf[unit]))
                 unit +=1
-            #print(provisional)
-            for part_provisional in provisional:
-                frequency[int(part_provisional)] += 1
+            preparation = []
+            for sort_preparation in provisional:
+                if sort_preparation not in preparation:
+                    preparation.append(sort_preparation)
+                else:
+                    continue
+            preparation.sort()
+            i = 1
+            simple = []
+            for x in provisional:
+                if i in range(0,len(preparation)):
+                    x = int(x)
+                    c = simple.append(provisional.count(i))
+                    i += 1
+                else:
+                    break
+            frequency = dict(zip(preparation,simple))
             print(frequency)
+
+
+
+
+
+
 
         else:
             number_three = TEXTS[2]                                 #pokud je input 3, pak se vybere 3. část textu
@@ -220,7 +253,7 @@ if names in name and passwords == user.get(names):               # pokud je jmé
                     suma_list += x
             print("The sum of all the numbers", suma_list)
 
-            frequency = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0 }
+            frequency = { }
             graf = []                                                       #počítá četnost délky slov
             for words_frequency in number_three.replace(",", " ").replace(".", " ").split():     
                 if words_frequency.istitle() or words_frequency.isalpha() or words_frequency.isalnum():
@@ -232,11 +265,28 @@ if names in name and passwords == user.get(names):               # pokud je jmé
                 provisional.append(len(graf[unit]))
                 unit +=1
             #print(provisional)
-            for part_provisional in provisional:
-                frequency[int(part_provisional)] += 1
+            preparation = []
+            for sort_preparation in provisional:
+                if sort_preparation not in preparation:
+                    preparation.append(sort_preparation)
+                else:
+                    continue
+            preparation.sort()
+            i = 1
+            simple = []
+            for x in provisional:
+                if i in range(0,len(preparation)):
+                    x = int(x)
+                    c = simple.append(provisional.count(i))
+                    i += 1
+                else:
+                    break
+            frequency = dict(zip(preparation,simple))
             print(frequency)
-  
+
+
 else:
+    exit
     print("Unregistered user, terminating the program..")
 
        
