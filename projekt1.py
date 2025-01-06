@@ -57,7 +57,7 @@ else:
 
     number = input("Enter a number btw. 1 and 3 to select:")    #input zádá čísla 1,2,3
     print(separator)
-    if int(number) not in (1,2,3):                              #pokud není zadaný znak (1,2,3),pak uživatele upozorní
+    if number not in ("1","2","3"):                              #pokud není zadaný znak (1,2,3),pak uživatele upozorní
         print("Your symbol was wrong, good bye")
 
     else:
@@ -80,6 +80,7 @@ else:
                     every_big = every_big + 1
             print("There are", every_big, "uppercase words.")
             
+
             small_sign = 0                                      #spočítá slova s malými písmeny
             for lower_case in number_one.split():
                 if lower_case.islower():
@@ -93,6 +94,7 @@ else:
                     numeric = numeric + 1
             print("There are",numeric, "numeric string.")
             
+
             suma_list = 0                                       #sečte všechna čísla
             for x in number_one.replace(".", " ").split():
                 if x.isdigit():
@@ -101,7 +103,6 @@ else:
             print("The sum of all the numbers", suma_list)
             print(separator)
            
-            
             
             graf = []                                                       #počítá četnost délky slov
             for words_frequency in number_one.replace(",", " ").replace(".", " ").split():     
@@ -133,14 +134,8 @@ else:
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
             for f_key, f_value in frequency.items():
                  star = "*" * f_value
-                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")   
-
-           
-            
-            
-            
+                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")    
                    
-
 
 
 
@@ -157,11 +152,13 @@ else:
                     first_big = first_big +1
             print("Thera are", first_big,"titlecase words.")
 
+
             every_big = 0
             for big_case in number_two.split():
                 if big_case.isupper() and big_case.isalpha():
                     every_big = every_big + 1
             print("There are", every_big, "uppercase words.")
+
 
             small_sign = 0
             for lower_case in number_two.split():
@@ -176,6 +173,7 @@ else:
                     numeric = numeric + 1
             print("There are",numeric, "numeric string.")
 
+
             every_numeric = []
             every = TEXTS[0] + TEXTS[1] + TEXTS[2]
             for numeric in every:
@@ -184,7 +182,8 @@ else:
                     all_numeric = len(every_numeric)
             print("The sum of all the numbers", all_numeric)
 
-            suma_list = 0                                       #sečte všechna čísla
+
+            suma_list = 0                                       
             for x in number_two.replace(".", "").split():
                 if x.isdigit():
                     x = int(x)
@@ -193,7 +192,7 @@ else:
             print(separator)
 
             
-            graf = []                                                       #počítá četnost délky slov
+            graf = []                                                       
             for words_frequency in number_two.replace(",", " ").replace(".", " ").split():     
                 if words_frequency.istitle() or words_frequency.isalpha() or words_frequency.isalnum():
                     words_frequency = list(words_frequency)
@@ -228,8 +227,6 @@ else:
 
 
 
-
-
         else:
             number_three = TEXTS[2]                                 #pokud je input 3, pak se vybere 3. část textu
             
@@ -242,25 +239,29 @@ else:
                     first_big = first_big +1
             print("Thera are", first_big,"titlecase words.")
 
+
             every_big = 0
             for big_case in number_three.split():
                 if big_case.isupper() and big_case.isalpha():
                     every_big = every_big + 1
             print("There are", every_big, "uppercase words.")
             
+
             small_sign = 0
             for lower_case in number_three.split():
                 if lower_case.islower():
                     small_sign = small_sign + 1
             print("There are", small_sign, "lowercase words.")
            
+
             numeric = 0
             for ask_number in number_three.replace(".", "").split():
                 if ask_number.isdigit():
                     numeric = numeric + 1
             print("There are",numeric, "numeric string.")
            
-            suma_list = 0                                       #sečte všechna čísla
+
+            suma_list = 0                                       
             for x in number_three.replace(".", "").split():
                 if x.isdigit():
                     x = int(x)
@@ -269,7 +270,7 @@ else:
             print(separator)
 
             
-            graf = []                                                       #počítá četnost délky slov
+            graf = []                                                       
             for words_frequency in number_three.replace(",", " ").replace(".", " ").split():     
                 if words_frequency.istitle() or words_frequency.isalpha() or words_frequency.isalnum():
                     words_frequency = list(words_frequency)
