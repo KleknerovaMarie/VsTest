@@ -105,10 +105,12 @@ else:
            
             
             graf = []                                                       #počítá četnost délky slov
-            for words_frequency in number_one.replace(",", " ").replace(".", " ").split():     
-                if words_frequency.istitle() or words_frequency.isalpha() or words_frequency.isalnum():
-                    words_frequency = list(words_frequency)
-                    graf.append(words_frequency)
+            for words_frequency in number_one.replace(".", " ").replace(",", " ").split():     
+                if words_frequency.istitle() or words_frequency.isascii():
+                      words_frequency
+                      words_frequency = list(words_frequency)
+                      graf.append(words_frequency)
+
             provisional = []
             all_range = range(0, len(graf)) 
             for unit in all_range : 
@@ -124,7 +126,7 @@ else:
             i = 1
             simple = []
             for x in provisional:
-                if i in range(0,len(preparation)):
+                if i in range(0,len(preparation) + 1):
                     x = int(x)
                     c = simple.append(provisional.count(i))
                     i += 1
@@ -134,7 +136,7 @@ else:
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
             for f_key, f_value in frequency.items():
                  star = "*" * f_value
-                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")    
+                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}") 
                    
 
 
@@ -192,11 +194,13 @@ else:
             print(separator)
 
             
-            graf = []                                                       
-            for words_frequency in number_two.replace(",", " ").replace(".", " ").split():     
-                if words_frequency.istitle() or words_frequency.isalpha() or words_frequency.isalnum():
-                    words_frequency = list(words_frequency)
-                    graf.append(words_frequency)
+            graf = []                                                       #počítá četnost délky slov
+            for words_frequency in number_two.replace(".", " ").replace(",", " ").split():     
+                if words_frequency.istitle() or words_frequency.isascii():
+                      words_frequency
+                      words_frequency = list(words_frequency)
+                      graf.append(words_frequency)
+
             provisional = []
             all_range = range(0, len(graf)) 
             for unit in all_range : 
@@ -212,7 +216,7 @@ else:
             i = 1
             simple = []
             for x in provisional:
-                if i in range(0,len(preparation)):
+                if i in range(0,len(preparation) + 1):
                     x = int(x)
                     c = simple.append(provisional.count(i))
                     i += 1
@@ -270,17 +274,18 @@ else:
             print(separator)
 
             
-            graf = []                                                       
-            for words_frequency in number_three.replace(",", " ").replace(".", " ").split():     
-                if words_frequency.istitle() or words_frequency.isalpha() or words_frequency.isalnum():
-                    words_frequency = list(words_frequency)
-                    graf.append(words_frequency)
+            graf = []                                                       #počítá četnost délky slov
+            for words_frequency in number_three.replace(".", " ").replace(",", " ").split():     
+                if words_frequency.istitle() or words_frequency.isascii():
+                      words_frequency
+                      words_frequency = list(words_frequency)
+                      graf.append(words_frequency)
+
             provisional = []
             all_range = range(0, len(graf)) 
             for unit in all_range : 
                 provisional.append(len(graf[unit]))
                 unit +=1
-            #print(provisional)
             preparation = []
             for sort_preparation in provisional:
                 if sort_preparation not in preparation:
@@ -291,7 +296,7 @@ else:
             i = 1
             simple = []
             for x in provisional:
-                if i in range(0,len(preparation)):
+                if i in range(0,len(preparation) + 1):
                     x = int(x)
                     c = simple.append(provisional.count(i))
                     i += 1
@@ -301,8 +306,7 @@ else:
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
             for f_key, f_value in frequency.items():
                  star = "*" * f_value
-                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}") 
-
+                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
 
 
 
