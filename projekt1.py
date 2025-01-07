@@ -107,7 +107,6 @@ else:
             graf = []                                                       #počítá četnost délky slov
             for words_frequency in number_one.replace(".", " ").replace(",", " ").split():     
                 if words_frequency.istitle() or words_frequency.isascii():
-                      words_frequency
                       words_frequency = list(words_frequency)
                       graf.append(words_frequency)
 
@@ -197,7 +196,6 @@ else:
             graf = []                                                       #počítá četnost délky slov
             for words_frequency in number_two.replace(".", " ").replace(",", " ").split():     
                 if words_frequency.istitle() or words_frequency.isascii():
-                      words_frequency
                       words_frequency = list(words_frequency)
                       graf.append(words_frequency)
 
@@ -277,7 +275,6 @@ else:
             graf = []                                                       #počítá četnost délky slov
             for words_frequency in number_three.replace(".", " ").replace(",", " ").split():     
                 if words_frequency.istitle() or words_frequency.isascii():
-                      words_frequency
                       words_frequency = list(words_frequency)
                       graf.append(words_frequency)
 
