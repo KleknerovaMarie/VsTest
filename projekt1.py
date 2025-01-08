@@ -118,6 +118,7 @@ else:
                 o = s_frequency.setdefault(s,provisional.count(s))
 
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
+            print(separator)
             for f_key, f_value in s_frequency.items():
                  star = "*" * f_value
                  print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
@@ -183,6 +184,7 @@ else:
                 o = s_frequency.setdefault(s,provisional.count(s))
 
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
+            print(separator)
             for f_key, f_value in s_frequency.items():
                  star = "*" * f_value
                  print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
@@ -247,10 +249,10 @@ else:
                 o = s_frequency.setdefault(s,provisional.count(s))
             
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
+            print(separator)
             for f_key, f_value in s_frequency.items():
                  star = "*" * f_value
-                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
-            
+                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}") 
 
 
 
