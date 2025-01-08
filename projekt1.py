@@ -47,7 +47,7 @@ passwords = input("password:")
 separator = "{:^15}".format("-" * 40)
 print(separator)
 
-if names not in name and passwords != user.get(names):              # pokuj jmeno a heslo není v dict, pak ukončí program
+if names != name and passwords != user.get(names):               # pokuj jmeno a heslo není v dict, pak ukončí program
     print("Unregistered user, terminating the program..")
     exit()
 else: 
@@ -57,12 +57,11 @@ else:
 
     number = input("Enter a number btw. 1 and 3 to select:")    #input zádá čísla 1,2,3
     print(separator)
-    number = int(number)
-    if number not in (1, 2, 3):                              #pokud není zadaný znak (1,2,3),pak uživatele upozorní
+    if number not in ("1","2", "3"):                              #pokud není zadaný znak (1,2,3),pak uživatele upozorní
         print("Your symbol was wrong, good bye")
 
     else:
-        if int(number) == 1:                                    #pokud je input 1, pak se vybere 1. část textu
+        if number == "1":                                    #pokud je input 1, pak se vybere 1. část textu
             number_one = TEXTS[0]
 
             words = len(number_one.split())                     #spočítá počet slov v textu
@@ -94,8 +93,7 @@ else:
             print(separator)
            
             
-            graf = []  
-            frequency = {}                                                     #počítá četnost délky slov
+            graf = []                                                   #počítá četnost délky slov
             for words_frequency in number_one.replace(".", " ").replace(",", " ").split():     
                 if words_frequency.istitle() or words_frequency.isascii():
                       words_frequency = list(words_frequency)
@@ -106,26 +104,28 @@ else:
             for unit in all_range : 
                 provisional.append(len(graf[unit]))
                 unit +=1
-            print(provisional)
-        
+               
+            preparation = []
             for sort_preparation in provisional:
-               k = frequency.setdefault(sort_preparation)
-            frequency_sorted = list(frequency.keys())
-            frequency_sorted.sort()
-            s_frequency = {f_sort: frequency[f_sort] for f_sort in frequency_sorted}
+                if sort_preparation not in preparation:
+                    preparation.append(sort_preparation)
+                else:
+                    continue
+            preparation.sort()
+          
+            s_frequency = {}
+            for s in preparation:
+                o = s_frequency.setdefault(s,provisional.count(s))
 
-           
-            
-            print(s_frequency)
-            #print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
-            #or f_key, f_value in frequency.items():
-             #    star = "*" * f_value
-             #    print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}") 
+            print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
+            for f_key, f_value in s_frequency.items():
+                 star = "*" * f_value
+                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
                    
 
 
 
-        elif int(number) == 2:                                  #pokud je input 2, pak se vybere 2. část textu
+        elif number == "2":                                  #pokud je input 2, pak se vybere 2. část textu
             number_two = TEXTS[1]
 
             words = len(number_two.split())                     #spočítá počet slov v textu
@@ -169,17 +169,23 @@ else:
             for unit in all_range : 
                 provisional.append(len(graf[unit]))
                 unit +=1
-        
-        
+               
+            preparation = []
             for sort_preparation in provisional:
-               k = frequency.setdefault(sort_preparation)
-            frequency_sorted = list(frequency.keys())
-            frequency_sorted.sort()
-            s_frequency = {f_sort: frequency[f_sort] for f_sort in frequency_sorted}
-            
-            print(s_frequency)
+                if sort_preparation not in preparation:
+                    preparation.append(sort_preparation)
+                else:
+                    continue
+            preparation.sort()
           
+            s_frequency = {}
+            for s in preparation:
+                o = s_frequency.setdefault(s,provisional.count(s))
 
+            print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
+            for f_key, f_value in s_frequency.items():
+                 star = "*" * f_value
+                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
 
 
 
@@ -227,17 +233,23 @@ else:
             for unit in all_range : 
                 provisional.append(len(graf[unit]))
                 unit +=1
-        
-        
+               
+            preparation = []
             for sort_preparation in provisional:
-               k = frequency.setdefault(sort_preparation)
-            frequency_sorted = list(frequency.keys())
-            frequency_sorted.sort()
-            s_frequency = {f_sort: frequency[f_sort] for f_sort in frequency_sorted}
-            
-            print(s_frequency)
+                if sort_preparation not in preparation:
+                    preparation.append(sort_preparation)
+                else:
+                    continue
+            preparation.sort()
+          
+            s_frequency = {}
+            for s in preparation:
+                o = s_frequency.setdefault(s,provisional.count(s))
             
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
+            for f_key, f_value in s_frequency.items():
+                 star = "*" * f_value
+                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
             
 
 
