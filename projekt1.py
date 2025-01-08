@@ -96,8 +96,8 @@ else:
             graf = []                                                   #počítá četnost délky slov
             for words_frequency in number_one.replace(".", " ").replace(",", " ").split():     
                 if words_frequency.istitle() or words_frequency.isascii():
-                      words_frequency = list(words_frequency)
-                      graf.append(words_frequency)
+                    words_frequency = list(words_frequency)
+                    graf.append(words_frequency)
 
             provisional = []
             all_range = range(0, len(graf)) 
@@ -120,8 +120,8 @@ else:
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
             print(separator)
             for f_key, f_value in s_frequency.items():
-                 star = "*" * f_value
-                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
+                star = "*" * f_value
+                print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
                    
 
 
@@ -162,8 +162,8 @@ else:
             frequency = {}                                                     #počítá četnost délky slov
             for words_frequency in number_two.replace(".", " ").replace(",", " ").split():     
                 if words_frequency.istitle() or words_frequency.isascii():
-                      words_frequency = list(words_frequency)
-                      graf.append(words_frequency)
+                    words_frequency = list(words_frequency)
+                    graf.append(words_frequency)
 
             provisional = []
             all_range = range(0, len(graf)) 
@@ -186,8 +186,8 @@ else:
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
             print(separator)
             for f_key, f_value in s_frequency.items():
-                 star = "*" * f_value
-                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
+                star = "*" * f_value
+                print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}")
 
 
 
@@ -227,8 +227,8 @@ else:
             frequency = {}                                                     #počítá četnost délky slov
             for words_frequency in number_three.replace(".", " ").replace(",", " ").split():     
                 if words_frequency.istitle() or words_frequency.isascii():
-                      words_frequency = list(words_frequency)
-                      graf.append(words_frequency)
+                    words_frequency = list(words_frequency)
+                    graf.append(words_frequency)
 
             provisional = []
             all_range = range(0, len(graf)) 
@@ -251,8 +251,8 @@ else:
             print("LEN|".rjust(4) + "OCCURENCES".rjust(15) + "|NR.".rjust(11))
             print(separator)
             for f_key, f_value in s_frequency.items():
-                 star = "*" * f_value
-                 print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}") 
+                star = "*" * f_value
+                print("{:>3}|".format(f_key) + "{: <22}|".format(star) + f"{f_value}") 
 
 
 
