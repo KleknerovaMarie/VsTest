@@ -84,13 +84,14 @@ else:
         small_sign = sum(lower_case.islower() for lower_case in vyber_textu.split())
         print("There are", small_sign, "lowercase words.") #spočítá slova s malými písmeny                                       
             
-            
-        numeric = sum(ask_number.isdigit() for ask_number in vyber_textu.replace(".", " ").split() )
+        clean_text = ''.join(clean for clean in vyber_textu if clean not in string.punctuation)
+
+        numeric = sum(ask_number.isdigit() for ask_number in clean_text.split() )
         print("There are",numeric, "numeric string.")   #spočítá počet cifer v textu
                                      
         
         suma_list = 0                                  #sečte všechna čísla     
-        for x in vyber_textu.replace(".", "").split():
+        for x in clean_text.split():
             if x.isdigit():
                 x = int(x)
                 suma_list += x
@@ -98,7 +99,7 @@ else:
         print(separator)
            
             
-        clean_text = ''.join(clean for clean in vyber_textu if clean not in string.punctuation)
+        
           
         graf = []                                                   #počítá četnost délky slov
         for words_frequency in clean_text.split():     
