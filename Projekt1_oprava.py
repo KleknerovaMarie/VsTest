@@ -66,8 +66,8 @@ else:
 
     else:
         number = int(number)
-        print(separator)
         vyber_textu = TEXTS[number - 1]                     # zjistí index textu
+        print(separator)
 
         words = len(vyber_textu.split())                     #spočítá počet slov v textu
         print("There are", words, "words in the selected text.")
