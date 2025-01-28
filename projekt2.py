@@ -6,6 +6,12 @@ email: racanovamarie@gmail.com
 """
 
 import random
+import time
+
+
+
+
+
 
 
 
@@ -29,10 +35,10 @@ def control_random(random_number):
 def generater_number(start, stop):
     generate = random.randint(start, stop)
     while control_random(generate) == False:
-        if control_random(generate) == False:
-            generate = random.randint(start, stop)
-        else:
+        generate = random.randint(start, stop)
+        if control_random(generate) == True:
             break
+            
     return generate
     
 
@@ -49,18 +55,18 @@ def bulls_cows(number:str, random_n:str):
     for index_number in all_index:          
         if number[index_number] == random_n[index_number]:
             bull += 1
-        else:
-            continue
+        #else:
+         #   continue
 
     for i_number in all_index:
         if number[i_number] in random_n:
             cow += 1
-        else:
-            continue
+        #else:
+            #continue
     cow -= bull
-    bul = "bull:" if bull < 2 else "bulls:"
-    cov = "cow:" if cow < 2 else "cows:"
-    print(bul, bull, cov, cow )
+    bul = "bull" if bull < 2 else "bulls"
+    cov = "cow" if cow < 2 else "cows"
+    print(bull, bul, cow, cov )
     return bull, cow
     
     
@@ -72,18 +78,25 @@ rand_number = str(rand_number)
 print(rand_number)
 print("Enter a number:")
 print(separator)
+
+start_time = time.time()
 while play_estimate != rand_number:
     play_estimate = input(">>> ")
     statistics += 1
     
-    if control_estimation(play_estimate) == False:
-        print("Wrong number.")
-        print(separator)
-    else:
+    if control_estimation(play_estimate) == True:
         bulls_cows(play_estimate, rand_number)
         print(separator)
+    else:         
+        print("Wrong number.")
+        print(separator)
+
 guess = "guess!" if statistics == 1 else "guesses!"
 print("Correct, you\'ve guessed the right number \nin", statistics, guess)
+end_time = time.time()
+time_play = end_time - start_time
+round_time = round(time_play, 3)
+print("You need", round_time, "seconds for your play.")
 print(separator)
 print("That's amazing!")
 
