@@ -6,13 +6,10 @@ print(separator)
 print("I\'ve generated a random 4 digit number for you.\nLet\'s play a bulls and cows game.")
 print(separator)
 
-start = 1000
-stop = 9999
-nahodne_cislo = random.randint(start, stop)
-nahodne_cislo = str(nahodne_cislo)
-print(nahodne_cislo)
+statistika = 0
 
-odhad = input("Zadej číslo:")
+
+
 
 def kontrola_nahody(nahoda):
     while nahoda == False:
@@ -29,31 +26,63 @@ def kontrola_odhadu(zadej_odhad:str):
         if cast != 4 or cast[0] == 0:
             return False
         elif cast.isdigit():
-            return False
-        else:
             return True
-    
-       
-def bulls_cows(number:str, random_n:str):
+        else:
+            return False
+
+
+
+
+def nahodne_cislo(zacatek:int, konec:int,):
+    zkontrolovane_nahody = random.randint(zacatek, konec)
+    while kontrola_nahody == False:
+        for kus in range(0,4):
+            if zkontrolovane_nahody.count(zkontrolovane_nahody[kus]) > 1:
+              False
+              zkontrolovane_nahody = random.randint(zacatek, konec) 
+              zkontrolovane_nahody = str(zkontrolovane_nahody) 
+            else:
+                break
+    return zkontrolovane_nahody
+          
+def bul_cow(odhady, hod_nahoda):
     bull = 0
     cow = 0
-    for index_number in range(len(random_n)):          
-        if number[index_number] == random_n[index_number]:
+    for i in len(range(hod_nahoda)):          
+        if odhady[i] == hod_nahoda[i]:
             bull += 1
         else:
             continue
 
-    for i_number in range(len(random_n)):
-        if number[i_number] in random_n:
+    for i_number in range(0, 4):
+        if odhady[i_number] in hod_nahoda:
             cow += 1
         else:
             continue
     cow -= bull
     print("bulls:", bull, "cow:", cow )
     return bull, cow
+        
+   
 
+odhad = input("Zadej číslo:")
 
+while nahodne_cislo(1000, 9999) != odhad:
+    statistika += 1
+    if kontrola_nahody(odhad) == True:
+        continue
+    else:
+        print("Your number is wrong.")
+        
+    if nahodne_cislo(1000, 9999) == odhad:
+        print("Vyhrál jsi.")
+        print(statistika)
+    else:
+        bul_cow(odhad, nahodne_cislo(1000, 9999))
+        statistika += 1
 
+while odhad != 
+        
 
-
-bulls_cows(number=odhad, random_n=nahodne_cislo)
+        
+        

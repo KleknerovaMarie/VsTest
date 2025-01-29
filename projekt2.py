@@ -26,7 +26,7 @@ def control_random(random_number: int):      #kontroluje jestli vygenerované č
         return False
     
 
-def generater_number(start: int, stop: int):      #generuje náhodné číslo dokud nejsou číslice unikátní
+def generator_number(start: int, stop: int):      #generuje náhodné číslo dokud nejsou číslice unikátní
     generate = random.randint(start, stop)
     while control_random(generate) is False:
         generate = random.randint(start, stop)
@@ -69,7 +69,7 @@ print(separator)
 
 statistics = 0
 play_estimate = None
-rand_number = generater_number(1000, 9999)
+rand_number = generator_number(1000, 9999)
 rand_number = str(rand_number)
 print("Enter a number:")
 print(separator)
