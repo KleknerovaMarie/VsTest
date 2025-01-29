@@ -18,7 +18,7 @@ def main():
 main()
 
 
-def control_random(random_number: int):      #kontroluje jestli je vygenerované nemá číslo stejné číslice
+def control_random(random_number: int):      #kontroluje jestli vygenerované číslo  nemá stejné číslice
     random_number = str(random_number)
     if len(random_number) == len(set(random_number)):
         return True
@@ -93,15 +93,3 @@ round_time = round(time_play, 3)
 print("You needed", round_time, "seconds to play.")
 print(separator)
 print("That's amazing!")
-
-    
-    
-      
-            
-        
-
-    
-
-
-
-
