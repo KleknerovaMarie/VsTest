@@ -16,15 +16,15 @@ def main():
         main()
 
 
-def control_random(random_number):
+def control_random(random_number: str):      #kontroluje jestli je vygenerované nemá číslo stejné číslice
     random_number = str(random_number)
     if len(random_number) == len(set(random_number)):
         return True
-            
     else:
         return False
+    
 
-def generater_number(start, stop):
+def generater_number(start: int, stop: int):      #generuje náhodné číslo dokud nejsou číslice unikátní
     generate = random.randint(start, stop)
     while control_random(generate) == False:
         generate = random.randint(start, stop)
@@ -34,13 +34,13 @@ def generater_number(start, stop):
     return generate
     
 
-def control_estimation(estimation:str):
+def control_estimation(estimation: str):        #kontroluje vložené číslo
     if len(estimation) == 4 and estimation[0] != "0" and estimation.isdigit() and len(estimation) == len(set(estimation)):
         return True
     else:
         return False
         
-def bulls_cows(number:str, random_n:str):
+def bulls_cows(number:str, random_n:str):       #zjišťuje počet shodných číslic v čísle = cow a správné umístění = bull
     bull = 0
     cow = 0
     all_index = range(len(number))
@@ -71,12 +71,11 @@ statistics = 0
 play_estimate = None
 rand_number = generater_number(1000, 9999)
 rand_number = str(rand_number)
-print(rand_number)
 print("Enter a number:")
 print(separator)
 start_time = time.time()
 
-while play_estimate != rand_number:
+while play_estimate != rand_number:         # dokud se neshoduje vložené číslo s generovaným kontroluje input a bull_cow
     play_estimate = input(">>> ")
     statistics += 1
     if control_estimation(play_estimate) == True:
