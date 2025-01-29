@@ -15,13 +15,11 @@ import time
 
 
 
-separator = "-" * 50
-print("Hi there")
-print(separator)
-print("I\'ve generated a random 4 digit number for you.\nLet\'s play a bulls and cows game.")
-print(separator)
 
-
+def main():
+    print("Hi there!")
+    if __name__ == "main":
+        main()
 
 
 def control_random(random_number):
@@ -55,21 +53,25 @@ def bulls_cows(number:str, random_n:str):
     for index_number in all_index:          
         if number[index_number] == random_n[index_number]:
             bull += 1
-        #else:
-         #   continue
 
     for i_number in all_index:
         if number[i_number] in random_n:
             cow += 1
-        #else:
-            #continue
+    
     cow -= bull
-    bul = "bull" if bull < 2 else "bulls"
+    bul = "bull," if bull < 2 else "bulls,"
     cov = "cow" if cow < 2 else "cows"
     print(bull, bul, cow, cov )
     return bull, cow
     
     
+
+separator = "-" * 50
+print("Hi there!")
+print(separator)
+print("I\'ve generated a random 4 digit number for you.\nLet\'s play a bulls and cows game.")
+print(separator)
+
 
 statistics = 0
 play_estimate = None
@@ -78,12 +80,11 @@ rand_number = str(rand_number)
 print(rand_number)
 print("Enter a number:")
 print(separator)
-
 start_time = time.time()
+
 while play_estimate != rand_number:
     play_estimate = input(">>> ")
     statistics += 1
-    
     if control_estimation(play_estimate) == True:
         bulls_cows(play_estimate, rand_number)
         print(separator)
@@ -96,10 +97,9 @@ print("Correct, you\'ve guessed the right number \nin", statistics, guess)
 end_time = time.time()
 time_play = end_time - start_time
 round_time = round(time_play, 3)
-print("You need", round_time, "seconds for your play.")
+print("You needed", round_time, "seconds to play.")
 print(separator)
 print("That's amazing!")
-
 
     
     
