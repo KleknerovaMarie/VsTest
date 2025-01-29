@@ -10,12 +10,6 @@ import time
 
 
 
-
-
-
-
-
-
 def main():
     print("Hi there!")
     if __name__ == "main":
@@ -41,7 +35,7 @@ def generater_number(start, stop):
     
 
 def control_estimation(estimation:str):
-    if len(estimation) == 4 and estimation[0] != "0" and estimation.isdigit():
+    if len(estimation) == 4 and estimation[0] != "0" and estimation.isdigit() and len(estimation) == len(set(estimation)):
         return True
     else:
         return False
