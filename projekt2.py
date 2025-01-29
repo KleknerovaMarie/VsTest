@@ -30,7 +30,6 @@ def generater_number(start: int, stop: int):      #generuje náhodné číslo do
         generate = random.randint(start, stop)
         if control_random(generate) == True:
             break
-            
     return generate
     
 
@@ -51,7 +50,6 @@ def bulls_cows(number:str, random_n:str):       #zjišťuje počet shodných č�
     for i_number in all_index:
         if number[i_number] in random_n:
             cow += 1
-    
     cow -= bull
     bul = "bull," if bull < 2 else "bulls,"
     cov = "cow" if cow < 2 else "cows"
