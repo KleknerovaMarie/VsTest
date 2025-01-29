@@ -15,8 +15,10 @@ def main():
     if __name__ == "main":
         main()
 
+main()
 
-def control_random(random_number: str):      #kontroluje jestli je vygenerované nemá číslo stejné číslice
+
+def control_random(random_number: int):      #kontroluje jestli je vygenerované nemá číslo stejné číslice
     random_number = str(random_number)
     if len(random_number) == len(set(random_number)):
         return True
@@ -26,15 +28,15 @@ def control_random(random_number: str):      #kontroluje jestli je vygenerované
 
 def generater_number(start: int, stop: int):      #generuje náhodné číslo dokud nejsou číslice unikátní
     generate = random.randint(start, stop)
-    while control_random(generate) == False:
+    while control_random(generate) is False:
         generate = random.randint(start, stop)
-        if control_random(generate) == True:
+        if control_random(generate) is True:
             break
     return generate
     
 
-def control_estimation(estimation: str):        #kontroluje vložené číslo
-    if len(estimation) == 4 and estimation[0] != "0" and estimation.isdigit() and len(estimation) == len(set(estimation)):
+def control_estimation(estimat: str):        #kontroluje vložené číslo
+    if len(estimat) == 4 and estimat[0] != "0" and estimat.isdigit() and len(estimat) == len(set(estimat)):
         return True
     else:
         return False
@@ -59,7 +61,7 @@ def bulls_cows(number:str, random_n:str):       #zjišťuje počet shodných č�
     
 
 separator = "-" * 50
-print("Hi there!")
+
 print(separator)
 print("I\'ve generated a random 4 digit number for you.\nLet\'s play a bulls and cows game.")
 print(separator)
@@ -76,11 +78,11 @@ start_time = time.time()
 while play_estimate != rand_number:         # dokud se neshoduje vložené číslo s generovaným kontroluje input a bull_cow
     play_estimate = input(">>> ")
     statistics += 1
-    if control_estimation(play_estimate) == True:
+    if control_estimation(play_estimate) is True:
         bulls_cows(play_estimate, rand_number)
         print(separator)
     else:         
-        print("Wrong number.")
+        print("Wrong number, try again.")
         print(separator)
 
 guess = "guess!" if statistics == 1 else "guesses!"
