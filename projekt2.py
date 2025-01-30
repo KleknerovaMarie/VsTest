@@ -10,12 +10,6 @@ import time
 
 
 
-def main():
-    print("Hi there!")
-    if __name__ == "_main_":
-        main()
-
-main()
 
 
 def control_random(random_number: int):      #kontroluje jestli vygenerované číslo  nemá stejné číslice
@@ -66,6 +60,12 @@ print(separator)
 print("I\'ve generated a random 4 digit number for you.\nLet\'s play a bulls and cows game.")
 print(separator)
 
+def main():
+    print("Hi there!")
+    if __name__ == "_main_":
+        main()
+
+main()
 
 statistics = 0
 play_estimate = None
