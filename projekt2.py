@@ -12,7 +12,7 @@ import time
 
 def main():
     print("Hi there!")
-    if __name__ == "main":
+    if __name__ == "_main_":
         main()
 
 main()
